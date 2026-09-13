@@ -224,6 +224,8 @@ new OrderService(new MockEmailService()); // For tests!
 ```
 
 ### The Dependency Rule
+> Defined in [architecture.md](architecture.md) (The Dependency Rule), where it is applied across layers.
+
 Source code dependencies should point **inward** toward high-level policies (domain logic), never toward low-level details (infrastructure).
 
 ```

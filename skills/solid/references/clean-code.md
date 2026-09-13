@@ -2,23 +2,6 @@
 
 > Parts of this guide are based on concepts from the **"Clean Code" course summary** by [Academind GmbH / Maximilian Schwarzmuller](https://academind.com) (c) 2020.
 
-## What is Clean Code?
-
-Code that is:
-- **Easy to understand** - reveals intent clearly
-- **Easy to change** - modifications are localized
-- **Easy to test** - dependencies are injectable
-- **Simple** - no unnecessary complexity
-
-## The Human-Centered Approach
-
-Code has THREE consumers:
-1. **Users** - get their needs met
-2. **Customers** - make or save money
-3. **Developers** - must maintain it
-
-Design for all three, but remember: **developers read code 10x more than they write it.**
-
 ## Naming Principles
 
 ### 1. Consistency & Uniqueness (HIGHEST PRIORITY)
@@ -505,7 +488,7 @@ function processOrder(order: Order) {
 }
 ```
 
-### 2. Don't Use the ELSE Keyword
+### 2. Early Returns Instead of `else`
 
 Use early returns, guard clauses, or polymorphism.
 
@@ -527,6 +510,8 @@ function getDiscount(user: User): number {
 ```
 
 ### 3. Wrap All Primitives and Strings
+> Defined in [object-design.md](object-design.md) (Value Objects vs Entities). That file is the owner; this is the calisthenics drill.
+
 
 Primitives should be wrapped in domain objects when they have meaning.
 
@@ -581,6 +566,8 @@ class Order {
 ```
 
 ### 5. One Dot per Line (Law of Demeter)
+> Defined in [object-design.md](object-design.md) (Law of Demeter). Applies to reaching through an object *graph*, not to fluent chains: `items.filter(...).map(...)` and a builder's `.withX().build()` are one object answering repeatedly, and are fine.
+
 
 Don't chain through object graphs.
 
@@ -592,7 +579,7 @@ const city = order.customer.address.city;
 const city = order.getShippingCity();
 ```
 
-### 6. Don't Abbreviate
+### 6. Full Words
 
 If a name is too long to type, the class is doing too much.
 
@@ -612,11 +599,15 @@ const order = new Order();
 - Methods: < 10 lines
 - Files: < 100 lines
 
-If larger, it's probably doing too much. Split it.
+Crossing one is a prompt to look, not a target to hit. A method stays whole when its steps only make sense together — turning a coherent 15-line method into four 3-line ones leaves four things to read instead of one. Split when a piece earns its own name.
 
-### 8. No Classes with More Than Two Instance Variables
+The file bound is the loosest of the three: it holds for a class file, and gives way for reference material, generated code, and tests.
+
+### 8. Two Instance Variables per Class
 
 Forces small, focused classes.
+
+Count **state**: fields the class mutates or reasons about. Injected collaborators are composition, which is the goal, so a class wired to four of them is doing the right thing. Data-carrying types hold as many fields as their data has.
 
 ```typescript
 // BAD: Too many variables
@@ -644,7 +635,9 @@ class OrderDetails {
 }
 ```
 
-### 9. No Getters/Setters/Properties
+### 9. Behaviour, Not Accessors
+> Defined in [object-design.md](object-design.md) (Tell, Don't Ask). Data-carrying types are exempt: records, DTOs, ORM models, config objects and anything a serializer reads expose their data by design.
+
 
 Objects should have behavior, not just data. Tell objects what to do.
 

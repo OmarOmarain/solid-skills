@@ -44,27 +44,6 @@ Behavior is surprising, side effects are hidden.
 
 ---
 
-## The XP Values for Fighting Complexity
-
-From Extreme Programming:
-
-### 1. Communication
-Code should communicate clearly. Names, structure, tests all contribute.
-
-### 2. Simplicity
-Do the simplest thing that could possibly work.
-
-### 3. Feedback
-Fast feedback loops catch complexity early. TDD, CI, code review.
-
-### 4. Courage
-Refactor aggressively. Don't let complexity accumulate.
-
-### 5. Respect
-Respect future readers (including yourself). Write for humans first.
-
----
-
 ## KISS - Keep It Simple, Silly
 
 > "The simplest solution that works is usually the best."

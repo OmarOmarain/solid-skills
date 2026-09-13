@@ -1,9 +1,5 @@
 # Code Smells & Anti-Patterns
 
-## What Are Code Smells?
-
-Indicators that something MAY be wrong. Not bugs, but design problems that make code hard to understand, change, or test.
-
 ## The Five Categories
 
 ### 1. Bloaters
@@ -173,6 +169,8 @@ class Order {
 ```
 
 ### 4. Primitive Obsession
+> Fix defined in [object-design.md](object-design.md) (Value Objects vs Entities).
+
 
 **Symptom:** Using primitives for domain concepts.
 
@@ -203,6 +201,8 @@ function createUser(email: Email, age: Age, address: Address) {
 ```
 
 ### 5. Switch Statements
+> Fix defined in [object-design.md](object-design.md) (Polymorphism). A switch inside a single factory is the pattern, not the smell.
+
 
 **Symptom:** Switching on type, repeated across codebase.
 
@@ -281,6 +281,8 @@ class Order {
 ```
 
 ### 7. Speculative Generality
+> Fix defined in [complexity.md](complexity.md) (YAGNI).
+
 
 **Symptom:** "Just in case" abstractions that aren't used.
 

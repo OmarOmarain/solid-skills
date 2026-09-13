@@ -1,14 +1,10 @@
 # Design Patterns
 
-## What Are Design Patterns?
+## Let Patterns Emerge
 
-Reusable solutions to common design problems. A shared vocabulary for discussing design.
+Patterns solve problems you HAVE. Let them arrive through refactoring, once the shape is already forming.
 
-## WARNING: Don't Force Patterns
-
-> "Let patterns emerge from refactoring, don't force them upfront."
-
-Patterns should solve problems you HAVE, not problems you MIGHT have.
+> A pattern you cannot name a current cost for is speculative generality: see [complexity.md](complexity.md) (YAGNI).
 
 ## When to Use Patterns
 

@@ -131,14 +131,6 @@ class LoggingMiddleware {
 }
 ```
 
-### 6. Conway's Law
-
-> "Organizations design systems that mirror their communication structure."
-
-**Implication:** Team structure affects architecture. Align both intentionally.
-
----
-
 ## Common Architectural Styles
 
 ### Layered Architecture
@@ -307,7 +299,7 @@ PostgreSQL for:
 
 ---
 
-## Red Flags in Architecture
+## What to Look For
 
 - **Circular dependencies** between modules
 - **Domain depending on infrastructure**

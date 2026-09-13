@@ -53,6 +53,8 @@ This is where **design happens**. Look for:
 3. **No more production code** than sufficient to pass the one failing test
 
 ## The Rule of Three
+> Defined in [complexity.md](complexity.md) (DRY with the Rule of Three).
+
 
 **Only extract duplication when you see it THREE times.**
 
@@ -87,6 +89,8 @@ When going from RED to GREEN, prefer simpler transformations:
 Higher priority = simpler. Avoid jumping to complex transformations too early.
 
 ## Arrange-Act-Assert
+> Defined in [testing.md](testing.md), along with test naming and the doubles taxonomy.
+
 
 Structure every test:
 
